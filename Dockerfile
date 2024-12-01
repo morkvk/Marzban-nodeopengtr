@@ -36,4 +36,6 @@ RUN mkdir -p /var/lib/marzban-node && \
 
 RUN apt-get remove -y curl unzip
 
+# Указывает команду, которая будет выполнена при запуске контейнера. 
+# В данном случае это будет запуск Python-скрипта main.py с помощью bash.
 CMD ["bash", "-c", "python main.py"]
