@@ -27,7 +27,7 @@ RUN bash -c "$(curl -L https://github.com/Gozargah/Marzban-scripts/raw/master/in
 COPY . /code
 
 #  Устанавливает все зависимости Python, указанные в файле requirements.txt, 
-с помощью pip. Параметр --no-cache-dir уменьшает размер образа, не сохраняя кэш пакетов.
+# с помощью pip. Параметр --no-cache-dir уменьшает размер образа, не сохраняя кэш пакетов.
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # Создание файла ssl_client_cert.pem и добавление содержимого из addsert.txt
