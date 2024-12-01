@@ -13,6 +13,10 @@ COPY . /code
 
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
+# Создание файла ssl_client_cert.pem и добавление содержимого из addsert.txt
+RUN mkdir -p /var/lib/marzban-node && \
+    cp addsert.txt /var/lib/marzban-node/ssl_client_cert.pem
+
 RUN apt-get remove -y curl unzip
 
 CMD ["bash", "-c", "python main.py"]
